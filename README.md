@@ -42,3 +42,4 @@ Para ingresar al contenedor tenemos que ejecutar:
 ```bash
 docker xec -ti metsaploit docker/entrypoint.sh ./msfconsole -r docker/msfconsole.rc -y $APP_HOME/config/database.yml
 ```
+![Texto alternativo](https://github.com/dart-security/metasploit-compose/blob/master/msf4.png)
