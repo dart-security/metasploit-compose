@@ -6,6 +6,8 @@
 [![Metasploit](https://img.shields.io/badge/metasploit-latest-success)](https://hub.docker.com/_/owncloud)
 [![postgresql](https://img.shields.io/badge/postgresql-latest-blue)](https://hub.docker.com/_/mysql)
 
+![logs](https://github.com/dart-security/metasploit-compose/blob/master/metasploitdocker.png)
+
 ## Uso
 Clonar el respositorio en tu maquina con docker instaladoy docker-compose:
 ```bash
@@ -42,4 +44,4 @@ Para ingresar al contenedor tenemos que ejecutar:
 ```bash
 docker xec -ti metsaploit docker/entrypoint.sh ./msfconsole -r docker/msfconsole.rc -y $APP_HOME/config/database.yml
 ```
-![Texto alternativo](https://github.com/dart-security/metasploit-compose/blob/master/msf4.png)
+![Contenedor](https://github.com/dart-security/metasploit-compose/blob/master/msf4.png)
