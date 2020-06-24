@@ -18,4 +18,27 @@ si no tienes docker-compose instalado puedes instalarlo con pip:
 Despues de tener docker-compose ahora en nuestro "home" va a crear uns carpeta .msf4 en la cual metasploit gurdara los datos
 ```bash
 ➜ mkdir .msf4
+➜ sudo chown 1000 .msf4
+```
+## Ejecutando
+Para ejecutar el compose usaremos la siguiente liunea:
+```bash
+➜ docker-compose up -d
+```
+si requerimos de admin añadimos sudo:
+```bash
+➜ sudo docker-compose up -d
+```
+con docker-compose ps verificamos los contenedores
+```bash
+➜  metasploit docker-compose ps
+   Name                 Command               State           Ports         
+----------------------------------------------------------------------------
+metasploit   docker/entrypoint.sh ./msf ...   Up      0.0.0.0:4444->4444/tcp
+postgres     docker-entrypoint.sh postgres    Up      0.0.0.0:5432->5432/tcp
+```
+## Ingresando al contenedor
+Para ingresar al contenedor tenemos que ejecutar:
+```bash
+docker xec -ti metsaploit docker/entrypoint.sh ./msfconsole -r docker/msfconsole.rc -y $APP_HOME/config/database.yml
 ```
