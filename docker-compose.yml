@@ -1,5 +1,7 @@
 version: '3'
+
 services:
+  container_name: metasploit
   metasploit:
     image: metasploitframework/metasploit-framework:latest
     environment:
@@ -14,6 +16,7 @@ services:
       - $HOME/.msf4:/home/msf/.msf4
 
   db:
+    container_name: postgres
     image: postgres:10-alpine
     environment: 
       - POSTGRES_PASSWORD=msfpassword
@@ -21,10 +24,11 @@ services:
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     ports: 
       - 5432:5432
 
 volumes:
   postgres_data:
     driver: local
+
