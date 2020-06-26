@@ -42,6 +42,6 @@ postgres     docker-entrypoint.sh postgres    Up      0.0.0.0:5432->5432/tcp
 ## Ingresando al contenedor
 Para ingresar al contenedor tenemos que ejecutar:
 ```bash
-docker exec -ti metsaploit docker/entrypoint.sh ./msfconsole -r docker/msfconsole.rc -y $APP_HOME/config/database.yml
+docker-compose exec metasploit docker/entrypoint.sh ./msfconsole
 ```
 ![Contenedor](https://github.com/dart-security/metasploit-compose/blob/master/msf4.png)
